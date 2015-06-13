@@ -3,18 +3,21 @@ var _ = require('lodash');
 var here = require('./here');
 
 module.exports = function assignOverrides(dest, overrides, context) {
+  /* eslint complexity:[2, 6] */
   if (!overrides) {
-    return;
+    return dest;
   }
 
-  var w = overrides;
-
-  if (_.isFunction(w)) {
-    dest = w(dest);
-  } else if (_.isObject(w) && w[context]) {
-    _.merge(dest, w[context]);
-  } else if (_.isString(w)) {
-    return assignOverrides(require(here(w)));
+  if (_.isFunction(overrides)) {
+    dest = overrides(dest);
+  } else if (_.isString(overrides)) {
+    dest = assignOverrides(dest, require(here(overrides)), context);
+  } else if (_.isObject(overrides) && overrides[context]) {
+    _.merge(dest, overrides[context]);
+  } else if (_.isObject) {
+    _.merge(dest, overrides);
+  } else {
+    throw new Error('overrides must be a function, string, or object');
   }
   return dest;
 };

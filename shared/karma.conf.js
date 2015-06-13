@@ -3,9 +3,10 @@ var path = require('path');
 
 var _ = require('lodash');
 var assignOverrides = require('../utils/assign-overrides');
+var here = require('../utils/here');
 
 var packageJson = require(here('package.json'));
-var formlyConfig = packageJson.formly;
+var kcdCommon = packageJson.kcdCommon || {};
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'test';
 
@@ -57,7 +58,7 @@ module.exports = function(config) {
     ]
   };
 
-  defaultConfig = assignOverrides(defaultConfig, formlyConfig, process.env.NODE_ENV);
+  defaultConfig = assignOverrides(defaultConfig, kcdCommon.karma, process.env.NODE_ENV);
 
   config.set(defaultConfig);
 };
@@ -82,21 +83,22 @@ function getTestWebpackConfig() {
     testWebpackConfig.module.loaders.push({
       test: /^((?!\.(test|mock)\.).)*$/i, // all files not containing ".test." or ".mock."
       include: here('src'),
-      loader: 'isparta!ng-annotate',
+      loaders: getLoaders(['isparta', 'ng-annotate']),
       exclude: testUtilsRegex
     });
 
     testWebpackConfig.module.loaders.push({
       test: testUtilsRegex,
       include: here('src'),
-      loader: 'babel!eslint'
+      loaders: getLoaders(['babel', 'eslint'])
     });
   }
 
   return testWebpackConfig;
-}
 
-
-function here(p) {
-  return path.join(__dirname, p || '');
+  function getLoaders(loaders) {
+    return _.filter(loaders, function(loader) {
+      return packageJson.devDependencies.hasOwnProperty(loader + '-loader');
+    });
+  }
 }

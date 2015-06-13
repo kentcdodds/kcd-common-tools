@@ -1,6 +1,7 @@
 // this is a generated file. To override it, place a file by this name in "common-overrides/copy"
 /* eslint-env node */
 /* eslint no-console:0 */
+/* eslint no-shadow:0 */
 var glob = require('glob');
 var async = require('async');
 var fs = require('fs');

@@ -8,7 +8,7 @@ var here = require('../utils/here');
 var apiCheck = require('../utils/api-check');
 
 var packageJson = require(here('package.json'));
-var formlyConfig = packageJson.formly;
+var kcdCommon = packageJson.kcdCommon || {};
 
 var context = process.env.NODE_ENV || 'development';
 
@@ -21,7 +21,7 @@ var configFns = {
 
 var config = configFns[context]();
 addCommonPlugins();
-config = assignOverrides(config, formlyConfig.webpack, context);
+config = assignOverrides(config, kcdCommon.webpack, context);
 
 console.log('building version %s in %s mode', packageJson.version, context);
 
@@ -36,9 +36,7 @@ function getDevConfig() {
     context: here('src'),
     entry: './index.js',
     output: {
-      filename: 'formly.js',
-      path: here('dist'),
-      library: 'ngFormly',
+      filename: packageJson.main,
       libraryTarget: 'umd'
     },
 
@@ -48,13 +46,6 @@ function getDevConfig() {
     },
 
     externals: {
-      angular: 'angular',
-      'api-check': {
-        root: 'apiCheck',
-        amd: 'api-check',
-        commonjs2: 'api-check',
-        commonjs: 'api-check'
-      },
       chai: 'chai',
       'sinon-chai': 'sinonChai',
       sinon: 'sinon',
@@ -72,8 +63,8 @@ function getDevConfig() {
 
     module: {
       loaders: [
-        {test: /\.html$/, loader: 'raw', exclude: exclude},
-        {test: /\.js$/, loader: 'ng-annotate!babel!eslint', exclude: exclude}
+        {test: /\.html$/, loaders: getLoaders(['raw']), exclude: exclude},
+        {test: /\.js$/, loaders: getLoaders(['ng-annotate', 'babel', 'eslint']), exclude: exclude}
       ]
     },
     eslint: {
@@ -95,8 +86,7 @@ function getDevConfig() {
 function getProdConfig(noUglify) {
   var prodConfig = _.merge({}, getDevConfig(), {
     output: {
-      filename: 'formly.min.js',
-      path: here('dist')
+      filename: packageJson.main.replace(/\.js$/, '.min.js')
     },
     devtool: 'source-map',
     eslint: {
@@ -141,6 +131,12 @@ function getTestCIConfig() {
     'uglify-loader': {
       compress: {warnings: false}
     }
+  });
+}
+
+function getLoaders(loaders) {
+  return _.filter(loaders, function(loader) {
+    return packageJson.devDependencies.hasOwnProperty(loader + '-loader');
   });
 }
 
