@@ -1,1 +1,4 @@
-shared/link/.gitignore
+.idea
+*.DS_Store
+
+node_modules

@@ -1,1 +1,4 @@
-shared/link/.npmignore
+.idea
+node_modules
+.editorconfig
+.gitignore
