@@ -1,3 +1,9 @@
+# 1.0.0-beta.3
+
+## Other Changes
+
+- Adding sinon, chai, and mocha as strict dependencies.
+
 # 1.0.0-beta.2
 
 ## Other Changes
