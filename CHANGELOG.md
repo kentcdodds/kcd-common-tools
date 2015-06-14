@@ -1,4 +1,16 @@
-# 1.0.0-beta
+# 1.0.0-beta.2
+
+## Other Changes
+
+- Removing `api-check` on webpack config to make everything more flexible.
+
+# 1.0.0-beta.1
+
+## Bug Fixes
+
+- Fixed issue where npm ignore was ignoring everything that this library should include.
+
+# 1.0.0-beta.0
 
 ## Features
 

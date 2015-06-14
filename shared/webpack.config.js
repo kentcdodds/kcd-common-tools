@@ -5,7 +5,6 @@ var _ = require('lodash');
 
 var assignOverrides = require('../utils/assign-overrides');
 var here = require('../utils/here');
-var apiCheck = require('../utils/api-check');
 
 var packageJson = require(here('package.json'));
 var kcdCommon = packageJson.kcdCommon || {};
@@ -24,8 +23,6 @@ addCommonPlugins();
 config = assignOverrides(config, kcdCommon.webpack, context);
 
 console.log('building version %s in %s mode', packageJson.version, context);
-
-apiCheck.throw(getApi(), config, {prefix: 'getting webpack config'});
 
 module.exports = config;
 
@@ -149,17 +146,6 @@ function addCommonPlugins() {
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
     VERSION: JSON.stringify(packageJson.version)
   }));
-}
-
-function getApi() {
-  var c = apiCheck;
-
-  // ensure things are present that should be...
-  return c.shape({
-    output: c.shape({
-      library: c.string
-    })
-  });
 }
 
 function getBanner() {
