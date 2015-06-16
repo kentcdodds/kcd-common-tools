@@ -1,6 +1,12 @@
+# 1.0.0-beta.6
+
+## Breaking Changes
+
+- Not sure about these dependencies... It's a little confusing..
+
 # 1.0.0-beta.5
 
-## Other Changes
+## Breaking Changes
 
 - Removing `externals` to allow them to be configured on a per-use basis.
 
