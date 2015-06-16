@@ -42,20 +42,10 @@ function getDevConfig() {
       reasons: true
     },
 
-    externals: {
-      chai: 'chai',
-      'sinon-chai': 'sinonChai',
-      sinon: 'sinon',
-      lodash: '_'
-    },
-
     plugins: [],
 
     resolve: {
-      extensions: ['', '.js'],
-      alias: {
-        'angular-fix': here('src/angular-fix')
-      }
+      extensions: ['', '.js']
     },
 
     module: {

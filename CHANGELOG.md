@@ -1,3 +1,9 @@
+# 1.0.0-beta.5
+
+## Other Changes
+
+- Removing `externals` to allow them to be configured on a per-use basis.
+
 # 1.0.0-beta.4
 
 ## Enhancements
