@@ -1,3 +1,9 @@
+# 1.0.0-beta.9
+
+## Enhancement
+
+- Adding `*.ignored/`, `*.ignored.*`, and `*.ignored` to `gitignore`
+
 # 1.0.0-beta.8
 
 ## Breaking Change
