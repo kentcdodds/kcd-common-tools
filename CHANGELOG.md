@@ -1,3 +1,10 @@
+# 1.0.0-beta.8
+
+## Breaking Change
+
+- Removing `link/travis.yml`
+- Changing `ON_CI` for `CI` because all CI servers set this to `true`.
+
 # 1.0.0-beta.7
 
 ## Breaking Changes

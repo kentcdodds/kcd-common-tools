@@ -62,7 +62,7 @@ function getDevConfig() {
     }
   };
 
-  if (process.env.ON_CI !== 'true') {
+  if (process.env.CI !== 'true') {
     devConfig.plugins = [
       new WebpackNotifierPlugin()
     ];
