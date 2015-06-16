@@ -1,3 +1,9 @@
+# 1.0.0-beta.7
+
+## Breaking Changes
+
+- Adding some ignored files
+
 # 1.0.0-beta.6
 
 ## Breaking Changes

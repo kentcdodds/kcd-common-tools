@@ -2,6 +2,7 @@
 node_modules
 coverage
 local-examples
+demo
 .editorconfig
 .gitignore
 .travis.yml
