@@ -1,25 +1,25 @@
 {
   "name": "kcd-common-tools",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "description": "Common build tools for projects by Kent C. Dodds",
   "main": "index.js",
   "dependencies": {
     "async": "1.2.1",
     "chalk": "1.0.0",
-    "eslint": "^0.22.1",
+    "eslint": "0.22.1",
     "glob": "5.0.10",
-    "karma": "^0.12.35",
-    "karma-chai": "^0.1.0",
-    "karma-chrome-launcher": "^0.1.12",
-    "karma-coverage": "^0.3.1",
-    "karma-firefox-launcher": "^0.1.6",
-    "karma-mocha": "^0.1.10",
-    "karma-sinon": "^1.0.4",
-    "karma-webpack": "^1.5.1",
-    "lodash": "^3.9.3",
-    "node-libs-browser": "^0.5.2",
-    "webpack": "^1.9.10",
-    "webpack-notifier": "^1.2.1"
+    "karma": "0.12.35",
+    "karma-chai": "0.1.0",
+    "karma-chrome-launcher": "0.1.12",
+    "karma-coverage": "0.3.1",
+    "karma-firefox-launcher": "0.1.6",
+    "karma-mocha": "0.1.10",
+    "karma-sinon": "1.0.4",
+    "karma-webpack": "1.5.1",
+    "lodash": "3.9.3",
+    "node-libs-browser": "0.5.2",
+    "webpack": "1.9.10",
+    "webpack-notifier": "1.2.1"
   },
   "scripts": {
     "release": "with-package git commit -am pkg.version && with-package git tag pkg.version && git push && npm publish && git push --tags",
@@ -40,6 +40,6 @@
     "chai": "3.0.0",
     "mocha": "2.2.5",
     "sinon": "1.15.3",
-    "with-package": "0.1.0"
+    "with-package": "0.2.0"
   }
 }
