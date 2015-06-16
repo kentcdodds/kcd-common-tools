@@ -152,6 +152,6 @@ function getBanner() {
   return '//! ' + packageJson.name + ' version ' +
     packageJson.version +
     ' built with ♥ by ' +
-    packageJson.contributors.join(', ') +
+    (packageJson.contributors || [packageJson.author]).join(', ') +
     ' (ó ì_í)=óò=(ì_í ò)\n';
 }

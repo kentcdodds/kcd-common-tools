@@ -22,7 +22,7 @@ var entry = path.join(webpackConfig.context, webpackConfig.entry);
 module.exports = function(config) {
   var defaultConfig = {
     basePath: './',
-    frameworks: ['sinon-chai', 'chai', 'mocha', 'sinon'],
+    frameworks: filterDevDeps(['sinon-chai', 'chai', 'mocha', 'sinon'], 'karma-'),
     files: [
       entry
     ],
@@ -46,7 +46,7 @@ module.exports = function(config) {
     browsers: ['Firefox'],
     singleRun: ci,
     browserNoActivityTimeout: 180000,
-    plugins: [
+    plugins: filterDevDeps([
       'karma-webpack',
       'karma-mocha',
       'karma-sinon-chai',
@@ -55,7 +55,7 @@ module.exports = function(config) {
       'karma-coverage',
       'karma-chrome-launcher',
       'karma-firefox-launcher'
-    ]
+    ])
   };
 
   defaultConfig = assignOverrides(defaultConfig, kcdCommon.karma, process.env.NODE_ENV);
@@ -83,22 +83,24 @@ function getTestWebpackConfig() {
     testWebpackConfig.module.loaders.push({
       test: /^((?!\.(test|mock)\.).)*$/i, // all files not containing ".test." or ".mock."
       include: here('src'),
-      loaders: getLoaders(['isparta', 'ng-annotate']),
+      loaders: filterDevDeps(['isparta', 'ng-annotate'], undefined, '-loader'),
       exclude: testUtilsRegex
     });
 
     testWebpackConfig.module.loaders.push({
       test: testUtilsRegex,
       include: here('src'),
-      loaders: getLoaders(['babel', 'eslint'])
+      loaders: filterDevDeps(['babel', 'eslint'], undefined, '-loader')
     });
   }
 
   return testWebpackConfig;
 
-  function getLoaders(loaders) {
-    return _.filter(loaders, function(loader) {
-      return packageJson.devDependencies.hasOwnProperty(loader + '-loader');
-    });
-  }
 }
+
+function filterDevDeps(devDeps, prefix, suffix) {
+  return _.filter(devDeps, function(devDep) {
+    return packageJson.devDependencies.hasOwnProperty((prefix || '') + (devDep || '') + (suffix || ''));
+  });
+}
+

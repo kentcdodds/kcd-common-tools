@@ -1,3 +1,9 @@
+# 1.0.0-beta.4
+
+## Enhancements
+
+- Improving the recognition of dependencies for karma plugins/frameworks and webpack loaders.
+
 # 1.0.0-beta.3
 
 ## Other Changes
