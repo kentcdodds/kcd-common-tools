@@ -1,3 +1,9 @@
+# 1.0.0-beta.21
+
+## New Features
+
+- Overriding existing symlinks so updates can happen.
+
 # 1.0.0-beta.20
 
 ## New Features

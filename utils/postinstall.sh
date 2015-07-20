@@ -5,10 +5,10 @@ echo "Installing kcd-common-tools"
 
 pushd ../../
 
-ln -s node_modules/kcd-common-tools/shared/link/editorconfig .editorconfig
-ln -s node_modules/kcd-common-tools/shared/link/eslintignore .eslintignore
-ln -s node_modules/kcd-common-tools/shared/link/gitignore .gitignore
-ln -s node_modules/kcd-common-tools/shared/link/npmignore .npmignore
+ln -sf node_modules/kcd-common-tools/shared/link/editorconfig .editorconfig
+ln -sf node_modules/kcd-common-tools/shared/link/eslintignore .eslintignore
+ln -sf node_modules/kcd-common-tools/shared/link/gitignore .gitignore
+ln -sf node_modules/kcd-common-tools/shared/link/npmignore .npmignore
 
 cp node_modules/kcd-common-tools/shared/copy/* .
 
