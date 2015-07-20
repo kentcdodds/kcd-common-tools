@@ -1,3 +1,9 @@
+# 1.0.0-beta.20
+
+## New Features
+
+- Adding `.eslintrc` to copy which simply extends the main `.eslintrc`
+
 # 1.0.0-beta.19
 
 ## Breaking Changes
