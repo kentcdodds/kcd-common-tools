@@ -1,3 +1,9 @@
+# 1.0.0-beta.19
+
+## Breaking Changes
+
+- Updating `postinstall` script to point to the correct script... :-/
+
 # 1.0.0-beta.18
 
 ## Breaking Changes

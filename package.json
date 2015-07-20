@@ -1,6 +1,6 @@
 {
   "name": "kcd-common-tools",
-  "version": "1.0.0-beta.18",
+  "version": "1.0.0-beta.19",
   "description": "Common build tools for projects by Kent C. Dodds",
   "main": "index.js",
   "dependencies": {
@@ -26,7 +26,7 @@
     "with-package": "0.2.0"
   },
   "scripts": {
-    "postinstall": "bash utils/install.sh",
+    "postinstall": "bash utils/postinstall.sh",
     "release": "with-package git commit -am pkg.version && with-package git tag pkg.version && git push && npm publish && git push --tags",
     "release:beta": "npm run release && npm run tag:beta",
     "tag:beta": "with-package npm dist-tag add pkg.name@pkg.version beta"
