@@ -1,3 +1,9 @@
+# 1.0.0-beta.22
+
+## Bug Fixes
+
+- Didn't actually add the file to git :-/
+
 # 1.0.0-beta.21
 
 ## New Features
