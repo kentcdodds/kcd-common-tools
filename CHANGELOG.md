@@ -1,3 +1,9 @@
+# 1.0.0-beta.12
+
+## Breaking Changes
+
+- Attempting to fix install script
+
 # 1.0.0-beta.11
 
 ## New Features
