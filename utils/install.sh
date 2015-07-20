@@ -3,6 +3,8 @@ set -e
 
 echo "Installing kcd-common-tools"
 
+echo "${PWD##*/}"
+
 ln -s ../shared/link/editorconfig ../../../.editorconfig
 ln -s ../shared/link/eslintignore ../../../.eslintignore
 ln -s ../shared/link/gitignore ../../../.gitignore
