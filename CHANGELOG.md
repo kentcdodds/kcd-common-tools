@@ -1,3 +1,9 @@
+# 1.0.0-beta.17
+
+## Updates
+
+- All the last versions were just trial and error for the install script.... relative paths are awesome...
+
 # 1.0.0-beta.12
 
 ## Breaking Changes
