@@ -1,3 +1,13 @@
+# 1.0.0-beta.18
+
+## Breaking Changes
+
+- Changing `install` to `postinstall`
+
+## Bug Fixes
+
+- Fixing broken symlinks...
+
 # 1.0.0-beta.17
 
 ## Updates
