@@ -3,10 +3,10 @@ set -e
 
 echo "Installing kcd-common-tools"
 
-ln -s ./shared/link/editorconfig .editorconfig
-ln -s ./shared/link/eslintignore .eslintignore
-ln -s ./shared/link/gitignore .gitignore
-ln -s ./shared/link/npmignore .npmignore
+ln -s ./shared/link/editorconfig ../.editorconfig
+ln -s ./shared/link/eslintignore ../.eslintignore
+ln -s ./shared/link/gitignore ../.gitignore
+ln -s ./shared/link/npmignore ../.npmignore
 
 cp ./shared/copy/* ../../.
 
