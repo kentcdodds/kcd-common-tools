@@ -1,6 +1,6 @@
 {
   "name": "kcd-common-tools",
-  "version": "1.0.0-beta.10",
+  "version": "1.0.0-beta.11",
   "description": "Common build tools for projects by Kent C. Dodds",
   "main": "index.js",
   "dependencies": {
