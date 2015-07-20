@@ -1,3 +1,15 @@
+# 1.0.0-beta.11
+
+## New Features
+
+- Adding `copy` directory for things that need to be copied.
+- Adding `install` script to automatically create symlinks and copy files when `kcd-common-tools` is installed.
+
+## Breaking Changes
+
+- Removing console-check because eslint should do that for us.
+- Adding a ton of rules to `.eslintrc` and adding a `test.eslintrc`
+
 # 1.0.0-beta.10
 
 ## Enhancement

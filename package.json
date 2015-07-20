@@ -5,8 +5,9 @@
   "main": "index.js",
   "dependencies": {
     "async": "1.2.1",
+    "chai": "3.0.0",
     "chalk": "1.0.0",
-    "eslint": "0.22.1",
+    "eslint": "0.24.1",
     "glob": "5.0.10",
     "karma": "0.12.35",
     "karma-chai": "0.1.0",
@@ -17,15 +18,15 @@
     "karma-sinon": "1.0.4",
     "karma-webpack": "1.5.1",
     "lodash": "3.9.3",
+    "mocha": "2.2.5",
     "node-libs-browser": "0.5.2",
+    "sinon": "1.15.3",
     "webpack": "1.9.10",
     "webpack-notifier": "1.2.1",
-    "chai": "3.0.0",
-    "mocha": "2.2.5",
-    "sinon": "1.15.3",
     "with-package": "0.2.0"
   },
   "scripts": {
+    "install": "bash utils/install.sh",
     "release": "with-package git commit -am pkg.version && with-package git tag pkg.version && git push && npm publish && git push --tags",
     "release:beta": "npm run release && npm run tag:beta",
     "tag:beta": "with-package npm dist-tag add pkg.name@pkg.version beta"
@@ -39,5 +40,8 @@
   "bugs": {
     "url": "https://github.com/kentcdodds/kcd-common-tools/issues"
   },
-  "homepage": "https://github.com/kentcdodds/kcd-common-tools"
+  "homepage": "https://github.com/kentcdodds/kcd-common-tools",
+  "devDependencies": {
+    "eslint-plugin-mocha": "0.4.0"
+  }
 }

@@ -1,0 +1,27 @@
+{
+  "extends": "./.eslintrc",
+  "plugins": [
+    "mocha"
+  ],
+  "rules": {
+    "max-nested-callbacks": [2, 15],
+    "max-len": [2, 240],
+    "mocha/no-exclusive-tests": 2,
+    "mocha/handle-done-callback": 2
+  },
+  "env": {
+    "mocha": true
+  },
+  "globals": {
+    "before": false,
+    "beforeEach": false,
+    "after": false,
+    "afterEach": false,
+    "describe": false,
+    "chai": false,
+    "it": false,
+    "expect": false,
+    "sinon": false,
+    "exports": true
+  }
+}
