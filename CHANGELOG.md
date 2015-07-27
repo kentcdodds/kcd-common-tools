@@ -1,3 +1,10 @@
+# 1.0.0-beta.23
+
+## Breaking Changes
+
+- `postinstall` script was breaking on windows. Instead of making it cross-platform, I just removed the postinstall script and made it a normal npm script.
+
+
 # 1.0.0-beta.22
 
 ## Bug Fixes
