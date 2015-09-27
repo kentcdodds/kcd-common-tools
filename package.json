@@ -8,7 +8,7 @@
     "chai": "3.0.0",
     "chalk": "1.0.0",
     "eslint": "0.24.1",
-    "glob": "5.0.10",
+    "glob": "5.0.15",
     "karma": "0.12.35",
     "karma-chai": "0.1.0",
     "karma-chrome-launcher": "0.1.12",
