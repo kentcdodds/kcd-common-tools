@@ -6,7 +6,7 @@
   "dependencies": {
     "async": "1.4.2",
     "chai": "3.0.0",
-    "chalk": "1.0.0",
+    "chalk": "1.1.1",
     "eslint": "0.24.1",
     "glob": "5.0.15",
     "karma": "0.12.35",
