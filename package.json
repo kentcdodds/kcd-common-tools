@@ -18,7 +18,7 @@
     "karma-sinon": "1.0.4",
     "karma-webpack": "1.7.0",
     "lodash": "3.10.1",
-    "mocha": "2.2.5",
+    "mocha": "2.3.3",
     "node-libs-browser": "0.5.2",
     "sinon": "1.15.3",
     "webpack": "1.9.10",
