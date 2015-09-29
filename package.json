@@ -4,7 +4,7 @@
   "description": "Common build tools for projects by Kent C. Dodds",
   "main": "index.js",
   "dependencies": {
-    "async": "1.2.1",
+    "async": "1.4.2",
     "chai": "3.0.0",
     "chalk": "1.0.0",
     "eslint": "0.24.1",
